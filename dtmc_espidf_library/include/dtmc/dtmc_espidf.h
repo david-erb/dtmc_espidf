@@ -22,6 +22,8 @@
 #include <dtmc/version.h>
 #include <dtmc_base/dttasker_registry.h>
 
+#define DTMC_ESPIDF_FLAVOR "dtmc_espidf"
+
 void
 dtmc_espidf_each_error_log(dterr_t* dterr, void* context);
 
