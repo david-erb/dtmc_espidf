@@ -61,7 +61,11 @@ dtruntime_is_qemu()
 extern dtruntime_milliseconds_t
 dtruntime_now_milliseconds()
 {
-    return (dtruntime_milliseconds_t)(esp_timer_get_time() / 1000); // Prefer ESP-IDF's timer when available
+    // Use the FreeRTOS tick counter so that this is always consistent with
+    // vTaskDelay() used in dtruntime_sleep_milliseconds().  esp_timer_get_time()
+    // is NOT synchronized with the FreeRTOS scheduler tick on QEMU, causing
+    // dtinterval_scheduled to see near-zero deltas even after a full vTaskDelay.
+    return (dtruntime_milliseconds_t)pdTICKS_TO_MS(xTaskGetTickCount());
 }
 
 // --------------------------------------------------------------------------------------

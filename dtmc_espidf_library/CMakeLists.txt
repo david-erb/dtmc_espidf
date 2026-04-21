@@ -1,5 +1,8 @@
-include(${CMAKE_CURRENT_LIST_DIR}/../dthelpers.cmake)
-dthelpers_glob(MY_SOURCES dt*.c)
+if(NOT DEFINED CMAKE_SCRIPT_MODE_FILE AND NOT DEFINED CMAKE_FIND_PACKAGE_NAME)
+    file(GLOB MY_SOURCES CONFIGURE_DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/src/dt*.c)
+else()
+    file(GLOB MY_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/src/dt*.c)
+endif()
 
 # -----------------------------------------------------------------------------
 # source groups
@@ -45,4 +48,14 @@ idf_component_register(
     REQUIRES ${MY_REQUIRES}
 )
 
-set_property(TARGET ${COMPONENT_LIB} APPEND PROPERTY LINK_INTERFACE_MULTIPLICITY 3)
+
+# dtmc_base_library and dtmc_espidf_library have a circular symbol dependency.
+# --start-group/--end-group tells ld to rescan both archives repeatedly until
+# all references resolve, which is the standard fix for mutual archive deps.
+idf_component_get_property(dtmc_base_lib dtmc_base_library COMPONENT_LIB)
+target_link_libraries(${COMPONENT_LIB} INTERFACE
+    -Wl,--start-group
+    $<TARGET_LINKER_FILE:${dtmc_base_lib}>
+    $<TARGET_LINKER_FILE:${COMPONENT_LIB}>
+    -Wl,--end-group
+)

@@ -10,6 +10,9 @@
 #include <dtcore/dtheaper.h>
 #include <dtcore/dtstr.h>
 
+#include <dtmc_base/dtmc_base_constants.h>
+#include <dtmc_base/dtmcp4728.h>
+
 #include <dtmc/dtmc_espidf.h>
 #include <dtmc/dtmcp4728_espidf.h>
 
@@ -21,6 +24,7 @@
 
 struct dtmcp4728_espidf_t
 {
+    DTMCP4728_COMMON_MEMBERS
     dtmcp4728_espidf_config_t config;
 
     bool is_configured;
@@ -29,6 +33,10 @@ struct dtmcp4728_espidf_t
 
     i2c_config_t i2c_config;
 };
+
+// --------------------------------------------------------------------------------------------
+
+DTMCP4728_INIT_VTABLE(dtmcp4728_espidf);
 
 // --------------------------------------------------------------------------------------------
 // Internal declarations
@@ -117,6 +125,10 @@ dtmcp4728_espidf_init(dtmcp4728_espidf_t* self)
     DTERR_ASSERT_NOT_NULL(self);
 
     memset(self, 0, sizeof(*self));
+
+    self->model_number = DTMC_BASE_CONSTANTS_MCP4728_MODEL_ESPIDF;
+
+    DTERR_C(dtmcp4728_set_vtable(self->model_number, &dtmcp4728_espidf_vt));
 
 cleanup:
     if (dterr)

@@ -444,6 +444,15 @@ dttasker_set_info(dttasker_handle self_handle, dttasker_info_t* info)
 
     self->info = *info;
 
+    if (self->config.tasker_info_callback != NULL)
+    {
+        dttasker_info_t callback_info = self->info;
+        callback_info.name = callback_info._name;
+        strncpy(callback_info.name, self->_name, sizeof(callback_info._name));
+        callback_info.name[sizeof(callback_info._name) - 1] = '\0';
+        DTERR_C(self->config.tasker_info_callback(self->config.tasker_info_callback_context, &callback_info));
+    }
+
 cleanup:
     return dterr;
 }

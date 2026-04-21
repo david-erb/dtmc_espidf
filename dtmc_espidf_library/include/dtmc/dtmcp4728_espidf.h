@@ -22,58 +22,14 @@
 
 #include <dtcore/dterr.h>
 
+#include <dtmc_base/dtmcp4728.h>
+
 #define DTMCP4728_DEFAULT_I2C_PORT (I2C_NUM_0)
 #define DTMCP4728_DEFAULT_SDA_PIN (GPIO_NUM_21)
 #define DTMCP4728_DEFAULT_SCL_PIN (GPIO_NUM_22)
 #define DTMCP4728_DEFAULT_I2C_CLOCK_HZ (100000)
 #define DTMCP4728_DEFAULT_I2C_TIMEOUT_MS (1000)
 #define DTMCP4728_DEFAULT_I2C_ADDRESS (0x60)
-
-#define DTMCP4728_CHANNEL_COUNT (4)
-
-// --------------------------------------------------------------------------------------------
-// Enums
-
-typedef enum dtmcp4728_channel_t
-{
-    DTMCP4728_CHANNEL_A = 0,
-    DTMCP4728_CHANNEL_B = 1,
-    DTMCP4728_CHANNEL_C = 2,
-    DTMCP4728_CHANNEL_D = 3
-} dtmcp4728_channel_t;
-
-typedef enum dtmcp4728_vref_t
-{
-    DTMCP4728_VREF_VDD = 0,
-    DTMCP4728_VREF_INTERNAL = 1
-} dtmcp4728_vref_t;
-
-typedef enum dtmcp4728_power_down_t
-{
-    DTMCP4728_POWER_DOWN_NORMAL = 0,
-    DTMCP4728_POWER_DOWN_1K = 1,
-    DTMCP4728_POWER_DOWN_100K = 2,
-    DTMCP4728_POWER_DOWN_500K = 3
-} dtmcp4728_power_down_t;
-
-typedef enum dtmcp4728_gain_t
-{
-    DTMCP4728_GAIN_X1 = 0,
-    DTMCP4728_GAIN_X2 = 1
-} dtmcp4728_gain_t;
-
-// --------------------------------------------------------------------------------------------
-// Public per-channel config/value
-
-typedef struct dtmcp4728_channel_config_t
-{
-    dtmcp4728_channel_t channel;
-    uint16_t value_12bit;
-    dtmcp4728_vref_t vref;
-    dtmcp4728_power_down_t power_down;
-    dtmcp4728_gain_t gain;
-    bool udac;
-} dtmcp4728_channel_config_t;
 
 // --------------------------------------------------------------------------------------------
 // Public object config
@@ -96,7 +52,7 @@ typedef struct dtmcp4728_espidf_config_t
 typedef struct dtmcp4728_espidf_t dtmcp4728_espidf_t;
 
 // --------------------------------------------------------------------------------------------
-// Lifecycle
+// Lifecycle (not part of the facade)
 
 void
 dtmcp4728_espidf_config_init_defaults(dtmcp4728_espidf_config_t* cfg);
@@ -110,44 +66,7 @@ dtmcp4728_espidf_init(dtmcp4728_espidf_t* self);
 dterr_t*
 dtmcp4728_espidf_configure(dtmcp4728_espidf_t* self, const dtmcp4728_espidf_config_t* config);
 
-dterr_t*
-dtmcp4728_espidf_attach(dtmcp4728_espidf_t* self);
-
-dterr_t*
-dtmcp4728_espidf_detach(dtmcp4728_espidf_t* self);
-
-void
-dtmcp4728_espidf_dispose(dtmcp4728_espidf_t* self);
-
 // --------------------------------------------------------------------------------------------
-// Commands
+// Facade entry points
 
-dterr_t*
-dtmcp4728_espidf_fast_write(dtmcp4728_espidf_t* self, const dtmcp4728_channel_config_t channels[DTMCP4728_CHANNEL_COUNT]);
-
-dterr_t*
-dtmcp4728_espidf_multi_write(dtmcp4728_espidf_t* self, const dtmcp4728_channel_config_t* channel_config);
-
-dterr_t*
-dtmcp4728_espidf_sequential_write(dtmcp4728_espidf_t* self,
-  dtmcp4728_channel_t start_channel,
-  const dtmcp4728_channel_config_t* channel_configs,
-  int32_t channel_count);
-
-dterr_t*
-dtmcp4728_espidf_single_write_eeprom(dtmcp4728_espidf_t* self, const dtmcp4728_channel_config_t* channel_config);
-
-dterr_t*
-dtmcp4728_espidf_general_call_reset(dtmcp4728_espidf_t* self);
-
-dterr_t*
-dtmcp4728_espidf_general_call_wakeup(dtmcp4728_espidf_t* self);
-
-dterr_t*
-dtmcp4728_espidf_general_call_software_update(dtmcp4728_espidf_t* self);
-
-dterr_t*
-dtmcp4728_espidf_read_all(dtmcp4728_espidf_t* self, dtmcp4728_channel_config_t channels[DTMCP4728_CHANNEL_COUNT]);
-
-dterr_t*
-dtmcp4728_espidf_to_string(dtmcp4728_espidf_t* self, char* buffer, int32_t buffer_size);
+DTMCP4728_DECLARE_API(dtmcp4728_espidf)
