@@ -1,0 +1,16 @@
+# https://github.com/espressif/esp-modbus/blob/main/Kconfig
+
+# master flag to enable modbus for RTU
+CONFIG_FMB_COMM_MODE_RTU_EN=1
+
+# don't need ASCII
+CONFIG_FMB_COMM_MODE_ASCII_EN=n
+
+# don't need TCP
+CONFIG_FMB_COMM_MODE_TCP_EN=n
+
+# support for slaves to have names
+CONFIG_FMB_CONTROLLER_SLAVE_ID_SUPPORT=y
+
+# DTTASKER_PRIORITY_URGENT_LOW
+CONFIG_FMB_PORT_TASK_PRIO=13

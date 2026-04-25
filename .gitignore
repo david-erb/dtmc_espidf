@@ -1,0 +1,19 @@
+.claude
+
+# build artifacts
+**/build*/
+
+submodules/
+
+# dependency mirror
+**/managed_components/
+
+sdkconfig.old
+sdkconfig
+
+# test artifacts
+apps/test_most/test_nvblob_file.bin
+apps/test_all/test_nvblob_file.bin
+
+# samples artifacts
+ditherplot_linear1.yaml

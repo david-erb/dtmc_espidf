@@ -1,0 +1,2 @@
+# we'll be using busywork on CPU1, so disable the watchdog timer
+CONFIG_ESP_TASK_WDT_CHECK_IDLE_TASK_CPU1=n
