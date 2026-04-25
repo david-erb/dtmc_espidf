@@ -1,9 +1,0 @@
-idf_component_register(
-    SRCS 
-      main.c
-      publisher.c
-      subscriber.c
-    REQUIRES     
-      dtmc_espidf_library
-      dtcore_library
-)
