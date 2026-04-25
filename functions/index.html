@@ -1,0 +1,558 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://david-erb.github.io/dtmc_espidf/functions/index.html">
+      
+      
+        <link rel="prev" href="../index.html">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Functions - dtmc_espidf Library</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../index.html" title="dtmc_espidf Library" class="md-header__button md-logo" aria-label="dtmc_espidf Library" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            dtmc_espidf Library
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Functions
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/david-erb/dtmc_espidf/blob/main" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="dtmc_espidf Library" class="md-nav__button md-logo" aria-label="dtmc_espidf Library" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    dtmc_espidf Library
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/david-erb/dtmc_espidf/blob/main" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="index.html" class="md-nav__link md-nav__link--active">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Reference
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    API Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+  <h1>Functions</h1>
+
+<details class="note">
+<summary><code>dtadc_espidf_oneshot</code>&nbsp;&nbsp;&nbsp;ESP-IDF one-shot ADC backend for the dtadc interface.</summary>
+<p>Implements the dtadc vtable using the ESP-IDF one-shot ADC driver. Up to
+four channels are configured by GPIO number, attenuation, and bit width;
+the backend resolves GPIO numbers to ADC unit and channel internally so
+the public config remains free of ESP-IDF-specific types. A background
+task scans all configured channels at a configurable interval and delivers
+results via a per-scan callback.</p>
+<p><a href="https://github.com/david-erb/dtmc_espidf/blob/main/dtmc_espidf_library/include/dtmc/dtadc_espidf_oneshot.h" target="_blank">dtmc_espidf_library/include/dtmc/dtadc_espidf_oneshot.h</a></p>
+</details>
+<details class="note">
+<summary><code>dtdotstar_espidf</code>&nbsp;&nbsp;&nbsp;ESP-IDF SPI backend for the dtdotstar APA102 LED strip interface.</summary>
+<p>Implements the dtdotstar vtable using the ESP-IDF SPI master driver,
+driving an APA102/DotStar addressable LED strip over a configurable SPI
+host and GPIO pins. The LED count, MOSI and clock pins, and SPI host are
+set at configuration time. An optional post callback supports async
+completion notification after each transmitted frame.</p>
+<p><a href="https://github.com/david-erb/dtmc_espidf/blob/main/dtmc_espidf_library/include/dtmc/dtdotstar_espidf.h" target="_blank">dtmc_espidf_library/include/dtmc/dtdotstar_espidf.h</a></p>
+</details>
+<details class="note">
+<summary><code>dtethernet_espidf</code>&nbsp;&nbsp;&nbsp;ESP-IDF Ethernet connection manager.</summary>
+<p>Manages the ESP-IDF Ethernet driver lifecycle: configure from a
+dtradioconfig reference, connect, and query link status. Connection
+state is tracked internally via a FreeRTOS event group. The struct
+exposes method pointers directly, providing a lightweight object
+interface without the model-number registry used by later modules.</p>
+<p><a href="https://github.com/david-erb/dtmc_espidf/blob/main/dtmc_espidf_library/include/dtmc/dtethernet_espidf.h" target="_blank">dtmc_espidf_library/include/dtmc/dtethernet_espidf.h</a></p>
+</details>
+<details class="note">
+<summary><code>dtgpiopin_espidf</code>&nbsp;&nbsp;&nbsp;ESP-IDF GPIO backend for the dtgpiopin cross-platform interface.</summary>
+<p>Implements the dtgpiopin vtable for ESP32-class SoCs using the ESP-IDF
+GPIO driver. A single GPIO number (0-40 typical) is combined with mode
+(input/output/inout), pull (none/up/down), and drive strength at
+configuration time. ISR attach and enable/disable follow the common
+dtgpiopin contract, leaving application code portable across platforms.</p>
+<p><a href="https://github.com/david-erb/dtmc_espidf/blob/main/dtmc_espidf_library/include/dtmc/dtgpiopin_espidf.h" target="_blank">dtmc_espidf_library/include/dtmc/dtgpiopin_espidf.h</a></p>
+</details>
+<details class="note">
+<summary><code>dtinterval_espidf</code>&nbsp;&nbsp;&nbsp;ESP-IDF FreeRTOS task backend for the dtinterval periodic timer interface.</summary>
+<p>Implements the dtinterval vtable using a FreeRTOS task as the timing
+source. The callback function, context pointer, task name, and interval
+in microseconds are all set at configuration time. The callback receives
+a should_pause flag, enabling self-cancellation without external
+coordination.</p>
+<p><a href="https://github.com/david-erb/dtmc_espidf/blob/main/dtmc_espidf_library/include/dtmc/dtinterval_espidf.h" target="_blank">dtmc_espidf_library/include/dtmc/dtinterval_espidf.h</a></p>
+</details>
+<details class="note">
+<summary><code>dtiox_espidf_canbus</code>&nbsp;&nbsp;&nbsp;ESP-IDF TWAI (CAN) backend for the dtiox byte-stream interface.</summary>
+<p>Implements the dtiox vtable over the ESP-IDF TWAI controller, presenting
+CAN traffic as a plain byte stream: outbound bytes are sliced into 0-8-byte
+CAN frames using a configurable TX identifier, and inbound frame payloads
+are reassembled into an RX ring buffer. GPIO pins, bitrate, frame format
+(11-bit or 29-bit), operating mode, and queue depths are all set through
+dtiox_espidf_canbus_config_t without exposing any TWAI-specific types.</p>
+<p><a href="https://github.com/david-erb/dtmc_espidf/blob/main/dtmc_espidf_library/include/dtmc/dtiox_espidf_canbus.h" target="_blank">dtmc_espidf_library/include/dtmc/dtiox_espidf_canbus.h</a></p>
+</details>
+<details class="note">
+<summary><code>dtiox_espidf_uart</code>&nbsp;&nbsp;&nbsp;ESP-IDF UART backend for the dtiox byte-stream interface.</summary>
+<p>Implements the dtiox vtable over an ESP-IDF UART port. Baud rate, parity,
+data bits, stop bits, and flow control are set through the shared
+dtuart_helper_config_t; GPIO pin assignments for TX, RX, RTS, and CTS
+are provided separately. The UART port number is stored as a plain int
+to avoid exposing uart_port_t in the public header.</p>
+<p><a href="https://github.com/david-erb/dtmc_espidf/blob/main/dtmc_espidf_library/include/dtmc/dtiox_espidf_uart.h" target="_blank">dtmc_espidf_library/include/dtmc/dtiox_espidf_uart.h</a></p>
+</details>
+<details class="note">
+<summary><code>dtmc</code>&nbsp;&nbsp;&nbsp;Canonical top-level include for the ESP-IDF platform library.</summary>
+<p>Re-exports the full dtmc_espidf interface under the platform-agnostic
+name <dtmc/dtmc.h>. Application code includes this header to remain
+decoupled from the underlying platform selection while still gaining
+access to flavor strings, QEMU detection, esp_err_t macros, and the
+task-registry entry point provided by dtmc_espidf.</p>
+<p><a href="https://github.com/david-erb/dtmc_espidf/blob/main/dtmc_espidf_library/include/dtmc/dtmc.h" target="_blank">dtmc_espidf_library/include/dtmc/dtmc.h</a></p>
+</details>
+<details class="note">
+<summary><code>dtmc_espidf</code>&nbsp;&nbsp;&nbsp;ESP-IDF platform entry point for the dtmc embedded framework.</summary>
+<p>Declares the platform flavor and version strings, a QEMU environment
+detector, diagnostic helpers for printing environment and task state,
+an error-log iterator compatible with dterr_each, and the task-registry
+entry point that wires all ESP-IDF-specific tasks at startup. Also
+provides DTMC_ESPIDF_C and DTMC_ESPIDF_PASS macros that convert esp_err_t
+and FreeRTOS pdTRUE return values into dterr_t chains using the standard
+goto-cleanup pattern.</p>
+<p><a href="https://github.com/david-erb/dtmc_espidf/blob/main/dtmc_espidf_library/include/dtmc/dtmc_espidf.h" target="_blank">dtmc_espidf_library/include/dtmc/dtmc_espidf.h</a></p>
+</details>
+<details class="note">
+<summary><code>dtmcp4728_espidf</code>&nbsp;&nbsp;&nbsp;ESP-IDF I2C driver for the MCP4728 quad 12-bit DAC.</summary>
+<p>Drives a Microchip MCP4728 four-channel 12-bit DAC over ESP-IDF I2C.
+Each channel is independently configured with a 12-bit output value,
+voltage reference (VDD or internal 2.048 V), gain (x1 or x2), and power-
+down mode. The API covers fast write (volatile only), multi write (one
+channel at a time), sequential write (starting channel to N), and single
+write with EEPROM commit, plus general-call reset, wake-up, and software
+update. I2C port, GPIO pins, clock speed, and device address are all
+configurable.</p>
+<p><a href="https://github.com/david-erb/dtmc_espidf/blob/main/dtmc_espidf_library/include/dtmc/dtmcp4728_espidf.h" target="_blank">dtmc_espidf_library/include/dtmc/dtmcp4728_espidf.h</a></p>
+</details>
+<details class="note">
+<summary><code>dtmqttclient_espidf</code>&nbsp;&nbsp;&nbsp;ESP-IDF MQTT client backend for the dtmqttclient interface.</summary>
+<p>Implements the dtmqttclient vtable using the ESP-IDF MQTT client stack.
+Connection parameters are drawn from a dtradioconfig reference, avoiding
+redundant broker and credential fields at each call site. A configurable
+retry limit controls reconnect attempts before a persistent failure is
+reported.</p>
+<p><a href="https://github.com/david-erb/dtmc_espidf/blob/main/dtmc_espidf_library/include/dtmc/dtmqttclient_espidf.h" target="_blank">dtmc_espidf_library/include/dtmc/dtmqttclient_espidf.h</a></p>
+</details>
+<details class="note">
+<summary><code>dtnetportal_espmqtt</code>&nbsp;&nbsp;&nbsp;ESP-IDF MQTT backend for the dtnetportal interface.</summary>
+<p>Implements the dtnetportal vtable using the ESP-IDF MQTT client stack.
+Broker host, port, credentials, and WiFi parameters are supplied through
+a dtradioconfig reference, keeping provisioning data in one place. A
+configurable retry limit governs reconnect attempts before the backend
+reports a permanent failure through the standard dterr_t error chain.</p>
+<p><a href="https://github.com/david-erb/dtmc_espidf/blob/main/dtmc_espidf_library/include/dtmc/dtnetportal_espmqtt.h" target="_blank">dtmc_espidf_library/include/dtmc/dtnetportal_espmqtt.h</a></p>
+</details>
+<details class="note">
+<summary><code>dtnvblob_espidf_nvs</code>&nbsp;&nbsp;&nbsp;ESP-IDF NVS backend for the dtnvblob persistent storage interface.</summary>
+<p>Implements the dtnvblob vtable by reading and writing an opaque binary blob
+to an ESP-IDF NVS namespace and key. Configuration requires only the NVS
+namespace string and key name. The backend satisfies the same read/write/
+dispose contract as other dtnvblob backends, allowing persistent storage
+code to run unmodified across ESP-IDF and non-embedded targets.</p>
+<p><a href="https://github.com/david-erb/dtmc_espidf/blob/main/dtmc_espidf_library/include/dtmc/dtnvblob_espidf_nvs.h" target="_blank">dtmc_espidf_library/include/dtmc/dtnvblob_espidf_nvs.h</a></p>
+</details>
+<details class="note">
+<summary><code>dtprepper_espidf</code>&nbsp;&nbsp;&nbsp;ESP-IDF startup sequencer for WiFi station and Ethernet.</summary>
+<p>Orchestrates early-boot network initialization on ESP-IDF: loads radio
+configuration, initializes the ESP system, and then brings up either a
+WiFi station or an Ethernet interface (or both) in sequence. The struct
+owns a dtradioconfig, a dtstation_espidf, and a dtethernet_espidf inline,
+and exposes method pointers for each startup phase so the caller controls
+the order of operations.</p>
+<p><a href="https://github.com/david-erb/dtmc_espidf/blob/main/dtmc_espidf_library/include/dtmc/dtprepper_espidf.h" target="_blank">dtmc_espidf_library/include/dtmc/dtprepper_espidf.h</a></p>
+</details>
+<details class="note">
+<summary><code>dtstation_espidf</code>&nbsp;&nbsp;&nbsp;ESP-IDF WiFi station connection manager.</summary>
+<p>Manages the ESP-IDF WiFi stack in station mode: configure from a
+dtradioconfig reference, attempt connection with a bounded retry count,
+and query link status. Connection state is tracked internally via a
+FreeRTOS event group. The struct exposes method pointers directly,
+providing a lightweight object interface without the model-number
+registry used by later modules.</p>
+<p><a href="https://github.com/david-erb/dtmc_espidf/blob/main/dtmc_espidf_library/include/dtmc/dtstation_espidf.h" target="_blank">dtmc_espidf_library/include/dtmc/dtstation_espidf.h</a></p>
+</details>
+<details class="note">
+<summary><code>dtmc_espidf</code>&nbsp;&nbsp;&nbsp;Library flavor and version identification macros.</summary>
+<p>Provides DTMC_ESPIDF_VERSION string constants that identify the library build at runtime.
+Used by dtruntime and diagnostic routines to report the active library variant in environment tables and
+log output.</p>
+<p>This file is processed by tooling in the automated build system.
+It's important to maintain the structure and formatting of the version macros for compatibility with version parsing scripts.</p>
+<p><a href="https://github.com/david-erb/dtmc_espidf/blob/main/dtmc_espidf_library/include/dtmc/version.h" target="_blank">dtmc_espidf_library/include/dtmc/version.h</a></p>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.indexes", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
