@@ -1,0 +1,23 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  espidf:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    container:
+      image: ghcr.io/david-erb/docker30-espidf1:latest
+    strategy:
+      matrix:
+        app: [test_dry]
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          submodules: recursive
+
+      - name: Run
+        run: bash scripts/ci_espidf.sh ${{ matrix.app }}

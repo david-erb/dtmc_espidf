@@ -1,9 +1,11 @@
 .claude
+CLAUDE.md
 
 # build artifacts
 **/build*/
 
-submodules/
+# mkdocs output
+mkdocs/site
 
 # dependency mirror
 **/managed_components/
@@ -32,3 +34,4 @@ venv/
 .pytest_cache/
 .mypy_cache/
 .ruff_cache/
+
