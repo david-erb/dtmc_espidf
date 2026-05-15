@@ -27,8 +27,8 @@ SAVED_PID=${QEMU_PID:-}
 echo "DEBUG: coproc started, QEMU_PID=${SAVED_PID}"
 while IFS= read -r line <&"${QEMU[0]}"; do
     echo "$line"
-    if [[ "$line" == *"END OF app_main"* ]]; then
-        echo "DEBUG: saw END OF app_main, breaking"
+    if [[ "$line" == *"END OF UNITTESTS"* ]]; then
+        echo "DEBUG: saw END OF UNITTESTS, breaking"
         break
     fi
 done
