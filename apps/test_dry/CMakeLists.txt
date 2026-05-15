@@ -17,14 +17,17 @@ include(${CMAKE_CURRENT_LIST_DIR}/../../dthelpers.cmake)
 dthelpers_resolve(DTMC_ESPIDF_DIR dtmc_espidf "dtmc_espidf repo directory")
 dthelpers_resolve(DTMC_BASE_DIR dtmc_base "dtmc_base repo directory")
 dthelpers_resolve(DTCORE_DIR dtcore "dtcore repo directory")
+dthelpers_resolve(DTMC_SERVICES_DIR dtmc_services "dtmc_services repo directory")
 
-set(EXTRA_COMPONENT_DIRS 
+set(EXTRA_COMPONENT_DIRS
     ${DTMC_ESPIDF_DIR}/dtmc_espidf_tests
     ${DTMC_ESPIDF_DIR}/dtmc_espidf_library
     ${DTMC_BASE_DIR}/dtmc_base_tests
     ${DTMC_BASE_DIR}/dtmc_base_library
     ${DTCORE_DIR}/dtcore_tests
     ${DTCORE_DIR}/dtcore_library
+    ${DTMC_SERVICES_DIR}/dtmc_services_tests
+    ${DTMC_SERVICES_DIR}/dtmc_services_library
 )
 
 include($ENV{IDF_PATH}/tools/cmake/project.cmake)

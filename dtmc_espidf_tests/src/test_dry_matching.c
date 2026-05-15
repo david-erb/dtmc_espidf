@@ -33,7 +33,7 @@ test_dtmc_espidf_dry_matching(DTUNITTEST_SUITE_ARGS)
 
     unittest_control->ledgers = ledgers;
 
-    // nothing here for now!
+    DTUNITTEST_RUN_SUITE(test_dtmc_espidf_dtinterval);
 
     unittest_control->test_setup = NULL;
     unittest_control->test_teardown = NULL;

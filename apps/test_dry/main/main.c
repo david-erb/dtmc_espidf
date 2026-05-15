@@ -8,6 +8,8 @@
 
 #include <dtmc_espidf_tests.h>
 
+#include <dtmc_services_tests.h>
+
 #define TAG "app_main"
 
 // -------------------------------------------------------------------------------
@@ -28,6 +30,8 @@ app_main(void)
     test_dtmc_base_matching(&unittest_control);
 
     test_dtmc_espidf_dry_matching(&unittest_control);
+
+    test_dtmc_services_matching(&unittest_control);
 
     // print summary as final line of test output
     dtunittest_print_final(&unittest_control);

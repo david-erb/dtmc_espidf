@@ -1,19 +1,17 @@
 /*
  * dtinterval_espidf -- ESP-IDF FreeRTOS task backend for the dtinterval periodic timer interface.
  *
- * Implements the dtinterval vtable using a FreeRTOS task as the timing
- * source. The callback function, context pointer, task name, and interval
- * in microseconds are all set at configuration time. The callback receives
- * a should_pause flag, enabling self-cancellation without external
- * coordination.
+ * Implements the dtinterval vtable on ESP-IDF using esp_timer for periodic
+ * wakeups. Configuration is limited to backend details such as timer name and
+ * period; user callbacks are supplied through the dtinterval facade itself via
+ * dtinterval_set_callback().
  *
  * cdox v1.0.2
  */
 #pragma once
 
 #include <stdbool.h>
-
-#include <freertos/task.h>
+#include <stdint.h>
 
 #include <dtcore/dterr.h>
 
@@ -21,10 +19,7 @@
 
 typedef struct dtinterval_espidf_config_t
 {
-    const char* name;                   // name of the esp, used for logging and debugging
-    dtinterval_callback_fn callback_fn; // function to call periodically
-    void* callback_context;             // context to pass to the callback function
-    TaskHandle_t periodic_task_handle;
+    const char* name; // name of the timer, used for logging and debugging
     int32_t periodic_interval_micros;
 
 } dtinterval_espidf_config_t;
